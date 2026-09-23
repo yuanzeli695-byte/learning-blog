@@ -1,0 +1,24 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+const title = String(frontmatter.title || '学习记录');
+const description = String(frontmatter.description || '沅泽的学习记录');
+const date = String(frontmatter.date || '').slice(0, 10);
+const category = String(frontmatter.category || '学习记录');
+const tags = Array.isArray(frontmatter.tags) ? frontmatter.tags : [];
+---
+<BaseLayout title={`${title} | 沅泽的学习博客`} description={description}>
+  <article class="article-wrap">
+    <header class="article-header">
+      <a class="eyebrow" href={import.meta.env.BASE_URL}>← 返回首页</a>
+      <h1>{title}</h1>
+      <div class="post-meta"><time datetime={date}>{date}</time><span>·</span><span>{category}</span></div>
+      <p class="muted">{description}</p>
+      <div class="tags">{tags.map((tag) => <span class="tag">#{tag}</span>)}</div>
+    </header>
+    <div class="article-content"><slot /></div>
+  </article>
+</BaseLayout>
+
+

@@ -50,7 +50,7 @@ let index = 2;
 while (fs.existsSync(path.join(postsDir, `${slug}.md`))) slug = `${date}-${slugBase}-${index++}`;
 
 const body = paragraphs.length ? paragraphs.map((paragraph) => paragraph.split('\n').join('  \n')).join('\n\n') : '（原始笔记为空，请补充内容。）';
-const markdown = `---\ntitle: "${title.replaceAll('"', '\\"')}"\ndate: ${date}\ntags:\n  - 学习记录\ncategory: "学习记录"\ndescription: "${title.replaceAll('"', '\\"')}的学习记录。"\n---\n\n${body}\n`;
+const markdown = `---\nlayout: ../../layouts/PostLayout.astro\ntitle: "${title.replaceAll('"', '\\"')}"\ndate: ${date}\ntags:\n  - 学习记录\ncategory: "学习记录"\ndescription: "${title.replaceAll('"', '\\"')}的学习记录。"\n---\n\n${body}\n`;
 const outputPath = path.join(postsDir, `${slug}.md`);
 fs.writeFileSync(outputPath, markdown, 'utf8');
 
@@ -59,3 +59,4 @@ fs.mkdirSync(archiveDir, { recursive: true });
 fs.copyFileSync(inputPath, path.join(archiveDir, path.basename(inputPath)));
 console.log(`已生成: ${outputPath}`);
 console.log(`原文归档: ${path.join(archiveDir, path.basename(inputPath))}`);
+
