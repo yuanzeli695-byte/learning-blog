@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# 原始笔记默认保留在本地归档，不强制推送到公开仓库
+archive/original/*
+!archive/original/.gitkeep
+input/*
+!input/.gitkeep

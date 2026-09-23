@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import posts from "../data/posts.json";
+const recentPosts = posts.posts.slice(0, 8);
+---
+<BaseLayout title="沅泽的学习博客" description="记录学习、实践与复盘的个人博客。">
+  <div class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Learning in public</div>
+        <h1>把每天的学习，<br />变成可以回看的路。</h1>
+        <p>这里记录编程、计算机基础、实践项目和问题排查。文章不只展示结果，也保留理解、试错和复盘的过程。</p>
+      </div>
+      <div class="hero-card">
+        <strong>今天也留下一点记录</strong>
+        <span class="muted">将 txt 或 Word 笔记放入项目后，可以整理成结构清晰的博客文章。</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="recent-posts">
+      <div class="section-heading">
+        <h2 id="recent-posts">最近文章</h2>
+        <span class="muted">{posts.posts.length} 篇记录</span>
+      </div>
+      <div class="post-list">
+        {recentPosts.map((post) => (
+          <a class="post-card" href={`${import.meta.env.BASE_URL}${post.url}`}>
+            <div class="post-meta"><time datetime={post.date}>{post.date}</time><span>·</span><span>{post.category}</span></div>
+            <h3>{post.title}</h3>
+            <p>{post.description}</p>
+            <div class="tags">{post.tags.map((tag) => <span class="tag">#{tag}</span>)}</div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
