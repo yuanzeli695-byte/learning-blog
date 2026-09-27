@@ -1,4 +1,4 @@
-# 我把读写限制在临时目录，不依赖私人 data 文件。
+# TemporaryDirectory 会在结束后清理练习文件。
 from pathlib import Path
 from tempfile import TemporaryDirectory
 

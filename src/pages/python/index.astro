@@ -10,7 +10,7 @@ const groups = [...topics, ...new Set(entries.map((entry) => entry.topic).filter
   <div class="container python-page">
     <div class="eyebrow">Python learning notebook</div>
     <h1>Python 学习</h1>
-    <p class="python-lead">我把平时的 Python 练习按主题和功能拆成小段，说明每段想练习什么、关键代码为什么这样写。</p>
+    <p class="python-lead">平时的 Python 练习按主题归档，再按功能拆成短小片段；以后回看，可以很快找到当时在练什么。</p>
     <div class="python-overview">
       <div><strong>{entries.length}</strong><span>篇分段笔记</span></div>
       <div><strong>{topics.length}</strong><span>个起步主题</span></div>
@@ -45,7 +45,7 @@ const groups = [...topics, ...new Set(entries.map((entry) => entry.topic).filter
     })}
     <aside class="python-help">
       <h2>如何添加学习代码？</h2>
-      <p>继续在本地练习目录写代码即可。告诉我“同步 Python 学习代码”，我会先对照新增内容，再按功能拆段、写第一人称说明，注明必要的修改和待复盘问题。</p>
+      <p>继续在本地练习目录写代码即可。告诉我“同步 Python 学习代码”，整理时会先对照新增内容，再按功能拆段、写清代码意图，并注明必要的修改和待复盘问题。</p>
       <p class="muted">公开博客里的代码对所有人可见，提交前需要检查密码、令牌、个人路径和私人数据。</p>
     </aside>
   </div>

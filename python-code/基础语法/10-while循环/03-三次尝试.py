@@ -1,4 +1,4 @@
-# 我只用演示账号练习三次尝试，不用于真实认证。
+# 这里只是循环练习，用的是演示值，不用于真实登录。
 demo_user = 'demo'
 demo_password = 'demo'
 attempts = 0

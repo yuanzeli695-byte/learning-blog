@@ -1,4 +1,4 @@
-# 我先写入一行，再用 a 模式追加内容。
+# 先写入第一行，再用 a 模式追加第二行。
 from pathlib import Path
 from tempfile import TemporaryDirectory
 

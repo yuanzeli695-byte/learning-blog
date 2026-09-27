@@ -1,4 +1,4 @@
-# 我只在临时目录练习替换，避免删除真实数据。
+# 整个示例都在临时目录，不碰个人数据文件。
 from pathlib import Path
 from tempfile import TemporaryDirectory
 

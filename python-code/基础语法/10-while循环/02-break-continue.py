@@ -1,4 +1,4 @@
-# 我先更新计数器，再决定跳过或退出。
+# 先更新计数器，再决定 continue 或 break。
 num = 0
 while num < 6:
     num += 1

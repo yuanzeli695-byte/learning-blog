@@ -1,4 +1,4 @@
-# 我把多个条件组合起来，观察判断结果。
+# and 要两边都为真；or 只要一边为真。
 age = 18
 is_student = True
 print(age >= 18 and is_student)

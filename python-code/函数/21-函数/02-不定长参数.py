@@ -1,4 +1,4 @@
-# 我用 *args 和 **kwargs 接收不固定数量的参数。
+# *args 是元组，**kwargs 是字典。
 def show_arguments(*args, **kwargs):
     print(args)
     print(kwargs)

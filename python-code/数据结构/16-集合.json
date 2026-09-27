@@ -1,22 +1,22 @@
 {
   "title": "集合与集合运算",
   "date": "2026-09-15",
-  "summary": "我把集合关系运算与增删操作分成两段。",
+  "summary": "集合关系运算与集合方法，分别拿一段代码练习。",
   "source": "16-集合.py",
   "sourceSha256": "eaf0d6584037450dd4d61845d79b8d45950f46c976d41da6e913a65e2b17b1bf",
   "notes": [
     "集合会去重，但显示顺序不固定。",
-    "remove 不存在的元素会报错，discard 不会。"
+    "remove 遇到不存在的元素会报错；discard 则不会。"
   ],
   "sections": [
     {
       "title": "交、并、差、对称差",
-      "intro": "我用两个爱好集合来观察四种关系运算。",
+      "intro": "两个爱好集合做交、并、差、对称差，结果各代表什么？",
       "file": "01-集合关系.py"
     },
     {
       "title": "去重与增删",
-      "intro": "我先把列表去重，再练习 update、intersection、remove 和 discard。",
+      "intro": "去重以后再试 update、intersection、remove 和 discard。",
       "file": "02-集合方法.py"
     }
   ]

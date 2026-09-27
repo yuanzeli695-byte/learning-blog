@@ -1,4 +1,4 @@
-# 我重新赋值时，name 指向了另一个字符串。
+# name 的新值不是对原字符串的原地修改。
 name = 'zhangdaxian'
 before = id(name)
 name = 'libai'

@@ -1,4 +1,4 @@
-# 我只接受纯数字字符，猜中 36 后结束循环。
+# isdigit 对负号和小数点会返回 False。
 target = 36
 while True:
     text = input('猜一个数字：').strip()

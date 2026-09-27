@@ -1,4 +1,4 @@
-# 我用装饰器在调用前后记录时间。
+# wraps 保留被装饰函数的名字和文档信息。
 from functools import wraps
 from time import perf_counter
 

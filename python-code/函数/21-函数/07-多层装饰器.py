@@ -1,4 +1,4 @@
-# 我从靠近函数的装饰器开始包，调用时却先进入最外层。
+# 先应用靠近函数的装饰器，调用时从最外层进入。
 def first(func):
     def wrapper(*args, **kwargs):
         print('开始 first')

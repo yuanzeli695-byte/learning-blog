@@ -17,7 +17,7 @@ const { entry } = Astro.props;
       {entry.date && <time datetime={entry.date}>原文件更新 {entry.date}</time>}
     </div>
     <p class="python-lead">{entry.summary}</p>
-    <p class="python-provenance">我把原练习按用途拆开，去掉重复和失效的注释，必要时改写为可以独立阅读的示例。下面不是原文件的逐字备份。</p>
+    <p class="python-provenance">按用途拆开了原练习，删掉重复或失效的注释；有些片段为方便独立阅读作了改写，并非原文件的逐字备份。</p>
 
     {entry.sections.length > 2 && <nav class="python-section-nav" aria-label="本篇目录">
       {entry.sections.map((section, index) => <a href={`#part-${index + 1}`}>{index + 1}. {section.title}</a>)}
@@ -32,7 +32,7 @@ const { entry } = Astro.props;
       </section>
     ))}
 
-    {entry.notes.length > 0 && <aside class="python-notes"><h2>我的复盘</h2><ul>{entry.notes.map((note) => <li>{note}</li>)}</ul></aside>}
+    {entry.notes.length > 0 && <aside class="python-notes"><h2>复盘与提醒</h2><ul>{entry.notes.map((note) => <li>{note}</li>)}</ul></aside>}
     <p class="muted">这些代码在网页里只作静态展示，不会自动执行。含输入或文件操作的示例请先理解后再运行。</p>
   </article>
 </BaseLayout>

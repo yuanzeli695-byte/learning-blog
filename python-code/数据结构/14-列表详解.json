@@ -1,22 +1,22 @@
 {
   "title": "列表详解",
   "date": "2026-09-14",
-  "summary": "我从原练习里分别提取取值、插入和批量添加。",
+  "summary": "索引、插入与批量添加分开，重点看 append 和 extend 的区别。",
   "source": "14-列表详解.py",
   "sourceSha256": "eab99f662366f0c52a2dc260b5679a5c0b32e55bc504d437afc38c95e216831c",
   "notes": [
-    "append 把对象作为一个元素加入；extend 逐个加入元素。",
-    "原例里同一批元素先循环 append 再 extend 会重复，这里分开对比。"
+    "append 把对象当作一个元素加入；extend 把里面的元素逐个加入。",
+    "原练习连续添加同一批元素会重复，这里用独立列表对比。"
   ],
   "sections": [
     {
       "title": "索引、append 与 insert",
-      "intro": "我先按索引取值，再把新元素追加或插入到指定位置。",
+      "intro": "先取值，再试 append 和 insert，看新元素落在哪个位置。",
       "file": "01-索引插入.py"
     },
     {
       "title": "append 与 extend 的区别",
-      "intro": "我用两个独立列表对比：一个把整个列表加入，一个把元素逐个加入。",
+      "intro": "同样一批新元素，append 得到嵌套列表，extend 得到扁平列表。",
       "file": "02-extend.py"
     }
   ]

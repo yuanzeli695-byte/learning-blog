@@ -1,4 +1,4 @@
-# 我用 deepcopy 复制嵌套的可变列表。
+# deepcopy 会递归复制嵌套的可变容器。
 import copy
 
 original = ['张大仙', ['李白', '韩信']]

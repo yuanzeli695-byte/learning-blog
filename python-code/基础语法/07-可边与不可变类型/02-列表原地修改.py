@@ -1,4 +1,4 @@
-# 我直接修改列表的元素，而不是重新创建列表。
+# 修改元素前后，列表的 id 保持相同。
 names = ['zhangdaxian', 'libai']
 before = id(names)
 names[1] = 'luna'
