@@ -8,17 +8,31 @@ export function getStaticPaths() {
 
 const { entry } = Astro.props;
 ---
-<BaseLayout title={`${entry.title} | Python 学习 | 沅泽的学习博客`} description={entry.summary || `${entry.topic}：Python 学习代码与简短注释。`}>
+<BaseLayout title={`${entry.title} | Python 学习 | 沅泽的学习博客`} description={entry.summary || `${entry.topic}：Python 分段学习笔记。`}>
   <article class="article-wrap python-detail">
     <a class="eyebrow" href={`${import.meta.env.BASE_URL}python/`}>← 返回 Python 学习</a>
     <h1>{entry.title}</h1>
-    <div class="post-meta"><span>{entry.topic}</span><span>·</span><span>{entry.file}</span>{entry.date && <time datetime={entry.date}>原文件更新 {entry.date}</time>}</div>
-    {entry.summary && <p class="python-lead">{entry.summary}</p>}
-    {entry.notes.length > 0 && <section class="python-notes"><h2>学习要点</h2><ul>{entry.notes.map((note) => <li>{note}</li>)}</ul></section>}
-    <section aria-labelledby="source-heading">
-      <h2 id="source-heading">代码</h2>
-      <pre class="python-code"><code class="language-python">{entry.code}</code></pre>
-    </section>
-    <p class="muted">代码仅供阅读，不会在网站中执行。</p>
+    <div class="post-meta">
+      <span>{entry.topic}</span><span>·</span><span>由 {entry.source} 整理</span>
+      {entry.date && <time datetime={entry.date}>原文件更新 {entry.date}</time>}
+    </div>
+    <p class="python-lead">{entry.summary}</p>
+    <p class="python-provenance">我把原练习按用途拆开，去掉重复和失效的注释，必要时改写为可以独立阅读的示例。下面不是原文件的逐字备份。</p>
+
+    {entry.sections.length > 2 && <nav class="python-section-nav" aria-label="本篇目录">
+      {entry.sections.map((section, index) => <a href={`#part-${index + 1}`}>{index + 1}. {section.title}</a>)}
+    </nav>}
+
+    {entry.sections.map((section, index) => (
+      <section class="python-example" id={`part-${index + 1}`} aria-labelledby={`part-heading-${index + 1}`}>
+        <div class="python-part-label">练习 {String(index + 1).padStart(2, '0')}</div>
+        <h2 id={`part-heading-${index + 1}`}>{section.title}</h2>
+        <p>{section.intro}</p>
+        <pre class="python-code"><code class="language-python">{section.code}</code></pre>
+      </section>
+    ))}
+
+    {entry.notes.length > 0 && <aside class="python-notes"><h2>我的复盘</h2><ul>{entry.notes.map((note) => <li>{note}</li>)}</ul></aside>}
+    <p class="muted">这些代码在网页里只作静态展示，不会自动执行。含输入或文件操作的示例请先理解后再运行。</p>
   </article>
 </BaseLayout>

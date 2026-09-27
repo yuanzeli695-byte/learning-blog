@@ -1,11 +1,23 @@
 {
   "title": "列表详解",
   "date": "2026-09-14",
-  "summary": "索引、append、insert 与 extend 练习。",
-  "notes": [
-    "append 增加一个元素；extend 会把可迭代对象中的元素逐个加入列表。",
-    "集合转列表时元素顺序不固定。"
-  ],
+  "summary": "我从原练习里分别提取取值、插入和批量添加。",
   "source": "14-列表详解.py",
-  "sourceSha256": "eab99f662366f0c52a2dc260b5679a5c0b32e55bc504d437afc38c95e216831c"
+  "sourceSha256": "eab99f662366f0c52a2dc260b5679a5c0b32e55bc504d437afc38c95e216831c",
+  "notes": [
+    "append 把对象作为一个元素加入；extend 逐个加入元素。",
+    "原例里同一批元素先循环 append 再 extend 会重复，这里分开对比。"
+  ],
+  "sections": [
+    {
+      "title": "索引、append 与 insert",
+      "intro": "我先按索引取值，再把新元素追加或插入到指定位置。",
+      "file": "01-索引插入.py"
+    },
+    {
+      "title": "append 与 extend 的区别",
+      "intro": "我用两个独立列表对比：一个把整个列表加入，一个把元素逐个加入。",
+      "file": "02-extend.py"
+    }
+  ]
 }

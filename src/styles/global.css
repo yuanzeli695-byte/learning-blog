@@ -104,3 +104,16 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.8rem); margin: 14px 0 20px; }
 .python-code { overflow-x: auto; padding: 22px; border-radius: 16px; background: var(--code); color: #eef1ff; line-height: 1.55; tab-size: 4; }
 .python-code code { font-family: "Cascadia Code", "Fira Code", Consolas, monospace; font-size: .91rem; }
 @media (max-width: 720px) { .python-page { padding: 48px 0 64px; } .python-overview { gap: 16px; } .python-code { padding: 16px; } }
+.python-provenance { margin: 24px 0 36px; padding: 14px 18px; border-left: 3px solid var(--primary); background: var(--surface-soft); color: var(--muted); border-radius: 0 10px 10px 0; }
+.python-section-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
+.python-section-nav a { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); font-size: .88rem; }
+.python-example { margin: 46px 0 58px; scroll-margin-top: 100px; }
+.python-example h2 { margin: 6px 0 12px; font-size: 1.75rem; }
+.python-example p { margin: 0 0 20px; font-size: 1.05rem; }
+.python-part-label { color: var(--primary); font-size: .78rem; font-weight: 800; letter-spacing: .1em; }
+.python-example .python-code { margin: 0; }
+@media (max-width: 560px) {
+  .nav { flex-wrap: wrap; gap: 4px; padding: 9px 0; }
+  .nav-links { width: 100%; justify-content: space-between; }
+  .python-example { margin: 38px 0 44px; }
+}

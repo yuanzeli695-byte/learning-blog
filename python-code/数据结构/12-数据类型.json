@@ -1,11 +1,17 @@
 {
-  "title": "数据类型小练习",
+  "title": "整数类型小练习",
   "date": "2026-09-05",
-  "summary": "简单的整数赋值与 int 转换。",
-  "notes": [
-    "int(84) 仍得到整数，与初始的 84 在类型上没有变化。",
-    "文件很短，保留为当时的练习记录。"
-  ],
+  "summary": "原文件只有两行整数赋值，我加上类型输出便于观察。",
   "source": "12-数据类型.py",
-  "sourceSha256": "8884bbae9ebb4562dbf5cb47d1d98a90ef55d3f798368ca8c78adaa69c7849ad"
+  "sourceSha256": "8884bbae9ebb4562dbf5cb47d1d98a90ef55d3f798368ca8c78adaa69c7849ad",
+  "notes": [
+    "int(84) 仍是 int；这里没有把简单练习包装成复杂知识。"
+  ],
+  "sections": [
+    {
+      "title": "整数与 int 转换",
+      "intro": "我先给 age 赋一个整数，再看看 int 转换后的值和类型。",
+      "file": "01-int.py"
+    }
+  ]
 }
