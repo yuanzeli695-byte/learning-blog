@@ -1,0 +1,22 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+const title = String(frontmatter.title || '学习笔记');
+const description = String(frontmatter.description || '大模型学习笔记');
+const date = String(frontmatter.date || '').slice(0, 10);
+const topics = { fundamentals: '大模型基础', quantization: '模型量化', inference: '推理加速' };
+const topic = String(frontmatter.topic || '');
+const category = topics[topic] || '大模型学习';
+---
+<BaseLayout title={`${title} | 大模型学习 | 沅泽的学习博客`} description={description}>
+  <article class="article-wrap llm-article">
+    <a class="eyebrow" href={`${import.meta.env.BASE_URL}llm/`}>← 返回大模型学习</a>
+    <header class="article-header">
+      <h1>{title}</h1>
+      <div class="post-meta"><span>{category}</span><span>·</span><time datetime={date}>{date}</time></div>
+      <p class="muted">{description}</p>
+    </header>
+    <div class="article-content"><slot /></div>
+  </article>
+</BaseLayout>

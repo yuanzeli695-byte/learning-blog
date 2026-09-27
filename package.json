@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node scripts/build-post-index.mjs && astro dev",
-    "build": "node scripts/build-post-index.mjs && astro build",
+    "dev": "node scripts/build-post-index.mjs && node scripts/build-llm-index.mjs && astro dev",
+    "build": "node scripts/build-post-index.mjs && node scripts/build-llm-index.mjs && astro build",
     "preview": "astro preview",
     "import:note": "node scripts/import-note.mjs"
   },

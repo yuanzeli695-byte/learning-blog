@@ -117,3 +117,23 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.8rem); margin: 14px 0 20px; }
   .nav-links { width: 100%; justify-content: space-between; }
   .python-example { margin: 38px 0 44px; }
 }
+
+/* 独立学习专区 */
+.learning-section { margin: 8px 0 52px; }
+.learning-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.llm-page { padding: 72px 0 86px; }
+.llm-lead { color: var(--muted); font-size: 1.12rem; max-width: 760px; }
+.llm-overview { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin: 30px 0 20px; padding: 22px 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.llm-overview strong { color: var(--primary); font-size: 1.2rem; }
+.llm-overview span { color: var(--muted); }
+.llm-topics { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0 34px; }
+.llm-topics a { border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: 7px 14px; }
+.llm-topic { scroll-margin-top: 96px; margin: 34px 0 44px; }
+.llm-topic-desc { margin-top: 0; }
+.llm-topic .post-list { padding-bottom: 0; }
+.llm-help { margin-top: 46px; }
+.llm-article .article-header { margin-top: 10px; }
+@media (max-width: 720px) {
+  .learning-grid { grid-template-columns: 1fr; }
+  .llm-page { padding: 48px 0 64px; }
+}

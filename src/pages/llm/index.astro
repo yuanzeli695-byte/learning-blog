@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import catalog from '../../data/llm-notes.json';
+
+const topics = [
+  { id: 'fundamentals', name: '大模型基础', description: '概念、架构、训练与推理流程的学习笔记。' },
+  { id: 'quantization', name: '模型量化', description: '量化原理、方法对比、精度和资源开销。' },
+  { id: 'inference', name: '推理加速', description: '延迟、吞吐、显存与加速方法的实践记录。' },
+];
+---
+<BaseLayout title="大模型学习 | 沅泽的学习博客" description="记录大模型、模型量化与推理加速的学习、实验和复盘。">
+  <div class="container llm-page">
+    <div class="eyebrow">LLM learning notes</div>
+    <h1>大模型学习</h1>
+    <p class="llm-lead">记录大模型、模型量化和推理加速的学习过程。概念、论文阅读、动手实验和没弄明白的问题会分开写，方便以后回查和修订。</p>
+    <div class="llm-overview">
+      <strong>{catalog.notes.length} 篇笔记</strong>
+      <span>内容以实际学习材料为准；尚未整理的主题先留空，不预填结论。</span>
+    </div>
+    <nav class="llm-topics" aria-label="大模型学习分类">
+      {topics.map((topic) => <a href={`#${topic.id}`}>{topic.name}</a>)}
+    </nav>
+    {topics.map((topic) => {
+      const notes = catalog.notes.filter((note) => note.topic === topic.id);
+      return <section id={topic.id} class="llm-topic" aria-labelledby={`heading-${topic.id}`}>
+        <div class="section-heading"><h2 id={`heading-${topic.id}`}>{topic.name}</h2><span class="muted">{notes.length} 篇</span></div>
+        <p class="muted llm-topic-desc">{topic.description}</p>
+        {notes.length ? <div class="post-list">
+          {notes.map((note) => <a class="post-card" href={`${import.meta.env.BASE_URL}${note.url}`}>
+            <div class="post-meta"><time datetime={note.date}>{note.date}</time><span>·</span><span>{topic.name}</span></div>
+            <h3>{note.title}</h3><p>{note.description}</p>
+          </a>)}
+        </div> : <div class="empty-topic">暂无已整理的笔记。后续从实际笔记或实验记录中补充。</div>}
+      </section>;
+    })}
+    <aside class="python-help llm-help">
+      <h2>怎么记录？</h2>
+      <p>把 TXT、Word 或 Markdown 笔记交给我，说明要放在哪个主题。我会按实际内容整理为“学到什么—依据或实验—个人理解—待解决问题”，不把推测写成已验证事实。</p>
+    </aside>
+  </div>
+</BaseLayout>

@@ -11,10 +11,26 @@ const recentPosts = posts.posts.slice(0, 8);
         <h1>把每天的学习，<br />变成可以回看的路。</h1>
         <p>这里记录编程、计算机基础、实践项目和问题排查。文章不只展示结果，也保留理解、试错和复盘的过程。</p>
       </div>
-      <a class="hero-card hero-link" href={`${import.meta.env.BASE_URL}python/`}>
-        <strong>Python 学习代码 →</strong>
-        <span class="muted">按主题整理平时练习的代码，保留简单注释与学习要点。</span>
-      </a>
+      <div class="hero-card">
+        <strong>持续记录，逐步积累</strong>
+        <span class="muted">代码与研究笔记各归其位；事实、实践和待验证的问题分别写清楚。</span>
+      </div>
+    </section>
+
+    <section class="learning-section" aria-labelledby="learning-sections">
+      <div class="section-heading"><h2 id="learning-sections">学习专区</h2></div>
+      <div class="learning-grid">
+        <a class="post-card" href={`${import.meta.env.BASE_URL}python/`}>
+          <div class="eyebrow">Code notebook</div>
+          <h3>Python 学习</h3>
+          <p>按功能拆开日常练习，回看代码与踩坑记录。</p>
+        </a>
+        <a class="post-card" href={`${import.meta.env.BASE_URL}llm/`}>
+          <div class="eyebrow">Research notes</div>
+          <h3>大模型学习</h3>
+          <p>记录大模型基础、模型量化、推理加速的阅读与实践。</p>
+        </a>
+      </div>
     </section>
 
     <section aria-labelledby="recent-posts">
