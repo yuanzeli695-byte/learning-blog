@@ -11,10 +11,10 @@ const recentPosts = posts.posts.slice(0, 8);
         <h1>把每天的学习，<br />变成可以回看的路。</h1>
         <p>这里记录编程、计算机基础、实践项目和问题排查。文章不只展示结果，也保留理解、试错和复盘的过程。</p>
       </div>
-      <div class="hero-card">
-        <strong>今天也留下一点记录</strong>
-        <span class="muted">将 txt 或 Word 笔记放入项目后，可以整理成结构清晰的博客文章。</span>
-      </div>
+      <a class="hero-card hero-link" href={`${import.meta.env.BASE_URL}python/`}>
+        <strong>Python 学习代码 →</strong>
+        <span class="muted">按主题整理平时练习的代码，保留简单注释与学习要点。</span>
+      </a>
     </section>
 
     <section aria-labelledby="recent-posts">

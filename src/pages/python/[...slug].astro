@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPythonEntries } from '../../lib/python-library';
+
+export function getStaticPaths() {
+  return getPythonEntries().map((entry) => ({ params: { slug: entry.slug }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+---
+<BaseLayout title={`${entry.title} | Python 学习 | 沅泽的学习博客`} description={entry.summary || `${entry.topic}：Python 学习代码与简短注释。`}>
+  <article class="article-wrap python-detail">
+    <a class="eyebrow" href={`${import.meta.env.BASE_URL}python/`}>← 返回 Python 学习</a>
+    <h1>{entry.title}</h1>
+    <div class="post-meta"><span>{entry.topic}</span><span>·</span><span>{entry.file}</span>{entry.date && <time datetime={entry.date}>{entry.date}</time>}</div>
+    {entry.summary && <p class="python-lead">{entry.summary}</p>}
+    {entry.notes.length > 0 && <section class="python-notes"><h2>学习要点</h2><ul>{entry.notes.map((note) => <li>{note}</li>)}</ul></section>}
+    <section aria-labelledby="source-heading">
+      <h2 id="source-heading">代码</h2>
+      <pre class="python-code"><code class="language-python">{entry.code}</code></pre>
+    </section>
+    <p class="muted">代码仅供阅读，不会在网站中执行。</p>
+  </article>
+</BaseLayout>

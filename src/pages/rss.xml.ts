@@ -1,13 +1,14 @@
 import posts from '../data/posts.json';
+import type { APIContext } from 'astro';
 
-const escapeXml = (value) => String(value)
+const escapeXml = (value: string) => String(value)
   .replaceAll('&', '&amp;')
   .replaceAll('<', '&lt;')
   .replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&apos;');
 
-export const GET = ({ site }) => {
+export const GET = ({ site }: APIContext) => {
   const origin = site?.toString() || 'https://example.com';
   const home = new URL(import.meta.env.BASE_URL, origin).toString();
   const items = posts.posts.map((post) => {

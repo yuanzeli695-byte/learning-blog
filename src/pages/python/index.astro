@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPythonEntries } from '../../lib/python-library';
+
+const entries = getPythonEntries();
+const topics = ['基础语法', '函数', '数据结构', '文件与异常', '练习项目'];
+const groups = [...topics, ...new Set(entries.map((entry) => entry.topic).filter((topic) => !topics.includes(topic)))];
+---
+<BaseLayout title="Python 学习 | 沅泽的学习博客" description="整理 Python 学习代码、简短注释与学习要点。">
+  <div class="container python-page">
+    <div class="eyebrow">Python learning notebook</div>
+    <h1>Python 学习</h1>
+    <p class="python-lead">把练习过的代码按主题收好。每份代码保留原本的写法，旁边记录用途、关键点和还没弄懂的地方。</p>
+    <div class="python-overview">
+      <div><strong>{entries.length}</strong><span>份代码记录</span></div>
+      <div><strong>{topics.length}</strong><span>个起步主题</span></div>
+      <p>这里展示的是仓库里的 <code>python-code/</code> 文件。新增 <code>.py</code> 文件后，下次构建会自动出现在对应主题中。</p>
+    </div>
+
+    <nav class="python-topics" aria-label="Python 学习主题">
+      {groups.map((topic) => <a href={`#topic-${groups.indexOf(topic)}`}>{topic}</a>)}
+    </nav>
+
+    {groups.map((topic, index) => {
+      const items = entries.filter((entry) => entry.topic === topic);
+      return (
+        <section class="python-section" id={`topic-${index}`} aria-labelledby={`heading-${index}`}>
+          <div class="section-heading">
+            <h2 id={`heading-${index}`}>{topic}</h2>
+            <span class="muted">{items.length} 份代码</span>
+          </div>
+          {items.length ? (
+            <div class="post-list">
+              {items.map((entry) => (
+                <a class="post-card" href={`${import.meta.env.BASE_URL}python/${entry.slug}/`}>
+                  <div class="post-meta"><span>{entry.file}</span>{entry.date && <time datetime={entry.date}>{entry.date}</time>}</div>
+                  <h3>{entry.title}</h3>
+                  <p>{entry.summary || '查看代码与学习注释'}</p>
+                </a>
+              ))}
+            </div>
+          ) : <p class="empty-topic">还没有代码。把练习文件放进 <code>python-code/{topic}/</code> 后就会显示在这里。</p>}
+        </section>
+      );
+    })}
+    <aside class="python-help">
+      <h2>如何添加学习代码？</h2>
+      <p>把你写的 <code>.py</code> 文件放进相应主题目录，或者直接发给我。我会保留原本逻辑，补少量解释性注释；如果代码有错误，会单独说明，不会悄悄改掉。</p>
+      <p class="muted">公开博客里的代码对所有人可见，提交前需要检查密码、令牌、个人路径和私人数据。</p>
+    </aside>
+  </div>
+</BaseLayout>

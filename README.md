@@ -52,3 +52,9 @@ https://你的用户名.github.io/仓库名/
 - `archive/original/`：原始 Word/text 归档
 - `scripts/`：笔记导入和文章索引脚本
 - `.github/workflows/deploy.yml`：自动部署配置
+
+## Python 学习代码区
+
+网站顶部的 **Python 学习** 页面会展示 `python-code/` 中的 `.py` 文件，按照主题文件夹分组。将你平时写的代码放到 `python-code/基础语法/`、`python-code/函数/` 等目录，构建时会自动生成代码详情页。具体的可选元数据格式见 `python-code/README.md`。
+
+没有真实代码前，这个区块保持空白，不用生成内容冒充你的练习。你提供代码后，我会保留原本思路、添加少量中文注释与学习要点，并在发布前检查公开仓库中可能出现的敏感信息。

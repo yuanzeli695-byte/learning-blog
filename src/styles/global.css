@@ -77,3 +77,30 @@ h1 { font-size: clamp(2.4rem, 6vw, 4.8rem); margin: 14px 0 20px; }
   .hero-card { padding: 22px; }
   .article-wrap { padding: 48px 0; }
 }
+
+/* Python 学习区 */
+.hero-link { display: block; transition: transform .2s, border-color .2s; }
+.hero-link:hover { transform: translateY(-2px); border-color: var(--primary); }
+.python-page { padding: 72px 0 86px; }
+.python-page h1 { margin-bottom: 14px; }
+.python-lead { color: var(--muted); font-size: 1.12rem; max-width: 750px; }
+.python-overview { display: flex; align-items: center; flex-wrap: wrap; gap: 25px; margin: 32px 0; padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); }
+.python-overview div { min-width: 105px; }
+.python-overview strong { display: block; font-size: 1.65rem; line-height: 1.2; color: var(--primary); }
+.python-overview span { color: var(--muted); font-size: .87rem; }
+.python-overview p { flex: 1; min-width: 220px; margin: 0; color: var(--muted); }
+.python-topics { display: flex; flex-wrap: wrap; gap: 10px; padding: 8px 0 24px; }
+.python-topics a { border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; background: var(--surface); }
+.python-section { scroll-margin-top: 96px; margin: 28px 0 40px; }
+.python-section .post-list { padding-bottom: 0; }
+.empty-topic { margin: 0; padding: 21px 24px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); }
+.python-help, .python-notes { padding: 22px 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+.python-help { margin-top: 54px; }
+.python-help h2, .python-notes h2 { margin: 0 0 12px; font-size: 1.35rem; }
+.python-help p:last-child { margin-bottom: 0; }
+.python-detail h1 { margin: 16px 0; }
+.python-detail .python-lead { margin-top: 20px; }
+.python-notes { margin: 32px 0; }
+.python-code { overflow-x: auto; padding: 22px; border-radius: 16px; background: var(--code); color: #eef1ff; line-height: 1.55; tab-size: 4; }
+.python-code code { font-family: "Cascadia Code", "Fira Code", Consolas, monospace; font-size: .91rem; }
+@media (max-width: 720px) { .python-page { padding: 48px 0 64px; } .python-overview { gap: 16px; } .python-code { padding: 16px; } }
