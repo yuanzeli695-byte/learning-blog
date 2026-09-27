@@ -1,3 +1,67 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "title": "一批数据怎样完成一次训练",
+      "date": "2026-09-27",
+      "description": "从下一 token 预测到损失、梯度和参数更新，理清一个 batch 的训练链条。",
+      "topic": "fundamentals",
+      "topicLabel": "大模型基础",
+      "order": 10,
+      "url": "llm/notes/fundamentals/one-batch-training/"
+    },
+    {
+      "title": "Prefill、Decode 与 KV Cache",
+      "date": "2026-09-27",
+      "description": "分清提示词处理与逐 token 生成，并估算 KV Cache 的基础容量。",
+      "topic": "inference",
+      "topicLabel": "推理加速",
+      "order": 10,
+      "url": "llm/notes/inference/prefill-decode-kv-cache/"
+    },
+    {
+      "title": "链式法则、反向传播与训练中的梯度问题",
+      "date": "2026-09-27",
+      "description": "用链式法则理解梯度如何传回参数，并区分梯度消失、爆炸和训练开销。",
+      "topic": "fundamentals",
+      "topicLabel": "大模型基础",
+      "order": 20,
+      "url": "llm/notes/fundamentals/backprop-and-gradients/"
+    },
+    {
+      "title": "过拟合、泛化、正则化与 Dropout",
+      "date": "2026-09-27",
+      "description": "训练集表现不等于泛化能力：整理数据增强、L1/L2、Dropout 与鲁棒性的区别。",
+      "topic": "fundamentals",
+      "topicLabel": "大模型基础",
+      "order": 30,
+      "url": "llm/notes/fundamentals/generalization-and-regularization/"
+    },
+    {
+      "title": "词嵌入与 RNN：序列信息怎么进入模型",
+      "date": "2026-09-27",
+      "description": "词向量不等于逐维人类概念；RNN 用输入和隐藏状态递推处理顺序。",
+      "topic": "fundamentals",
+      "topicLabel": "大模型基础",
+      "order": 40,
+      "url": "llm/notes/fundamentals/embeddings-and-rnn/"
+    },
+    {
+      "title": "Transformer 层：注意力与前馈网络",
+      "date": "2026-09-27",
+      "description": "用 Q、K、V 和 MLP 的分工理解一层 Transformer 如何利用上下文。",
+      "topic": "fundamentals",
+      "topicLabel": "大模型基础",
+      "order": 50,
+      "url": "llm/notes/fundamentals/transformer-layer/"
+    },
+    {
+      "title": "从 RNN、卷积到 Transformer：多头注意力与 BLEU",
+      "date": "2026-09-27",
+      "description": "理清循环与卷积的历史语境、Transformer 的多头注意力，以及 BLEU 的评价边界。",
+      "topic": "fundamentals",
+      "topicLabel": "大模型基础",
+      "order": 60,
+      "url": "llm/notes/fundamentals/rnn-transformer-bleu/"
+    }
+  ]
 }

@@ -4,6 +4,7 @@ title: "替换为实际笔记标题"
 date: 2026-09-27
 description: "一句话概括这份笔记讨论什么。"
 topic: quantization
+order: 10
 ---
 
 > 此文件是模板，放在 `templates/` 下，不会发布。使用时复制到 `src/pages/llm/notes/quantization/`，改好标题、日期和内容；其他类别相应改用 `fundamentals` 或 `inference` 目录并修改 `topic`。

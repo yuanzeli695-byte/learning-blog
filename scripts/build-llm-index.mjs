@@ -33,6 +33,8 @@ function readMetadata(file, topic) {
   if (fields.layout !== '../../../../layouts/LlmNoteLayout.astro') {
     throw new Error(`${file}: layout 必须是 ../../../../layouts/LlmNoteLayout.astro`);
   }
+  const order = fields.order === undefined ? null : Number(fields.order);
+  if (order !== null && (!Number.isInteger(order) || order < 0)) throw new Error(`${file}: order 必须是非负整数`);
   const slug = path.basename(file, '.md');
   return {
     title: fields.title,
@@ -40,6 +42,7 @@ function readMetadata(file, topic) {
     description: fields.description,
     topic,
     topicLabel: topics[topic],
+    order,
     url: `llm/notes/${topic}/${slug}/`,
   };
 }
@@ -49,7 +52,7 @@ const notes = Object.keys(topics).flatMap((topic) => {
   return fs.readdirSync(dir, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith('.md') && !entry.name.startsWith('_'))
     .map((entry) => readMetadata(path.join(dir, entry.name), topic));
-}).sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title, 'zh-CN'));
+}).sort((a, b) => b.date.localeCompare(a.date) || (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER) || a.title.localeCompare(b.title, 'zh-CN'));
 
 fs.writeFileSync(output, JSON.stringify({ notes }, null, 2) + '\n', 'utf8');
 console.log(`Indexed ${notes.length} LLM learning note(s).`);
