@@ -1,0 +1,11 @@
+{
+  "title": "列表详解",
+  "date": "2026-09-14",
+  "summary": "索引、append、insert 与 extend 练习。",
+  "notes": [
+    "append 增加一个元素；extend 会把可迭代对象中的元素逐个加入列表。",
+    "集合转列表时元素顺序不固定。"
+  ],
+  "source": "14-列表详解.py",
+  "sourceSha256": "eab99f662366f0c52a2dc260b5679a5c0b32e55bc504d437afc38c95e216831c"
+}
